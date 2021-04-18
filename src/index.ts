@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import fs from 'fs';
+import { resolve } from 'path';
 
 const [,, ...args] = process.argv
 let input_arg = '';
@@ -16,7 +17,7 @@ else{
     input_arg = 'en';
 }
 
-let result = fs.readFileSync(`${__dirname}/resources/${input_arg}`, {encoding: 'utf8'});
+let result = fs.readFileSync(resolve(__dirname,`./resources/${input_arg}`,), {encoding: 'utf8'});
 
 
 const angelPercentageAmount = Math.round((Math.random()*100 + Number.EPSILON) * 100) / 100;
