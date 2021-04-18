@@ -1,47 +1,28 @@
 #!/usr/bin/env node
-
 import fs from 'fs';
-import commander, { Command } from 'commander';
 
-const  program = new Command();
-program.command('[language]')
-.description("Test commander")
-.action(handleAction);
+const [,, ...args] = process.argv
+let input_arg = '';
 
-let result = fs.readFileSync(`${__dirname}/resources/en`, {encoding: 'utf8'});
-
-console.log(result.toString());
-
-const angelPercentageAmount = 45.1;
-const rascalPercentageAmount = 100 - angelPercentageAmount;
-
-result = result.replace("${angelPercentageAmount}", angelPercentageAmount.toString());
-result = result.replace("${rascalPercentageAmount}", rascalPercentageAmount.toString());
-
-console.log(result.toString());
-
-const world = 'world';
-
-export function hello(word: string = world): string {
-  return `Hello ${world}! `;
-}
-
-console.log(hello());
-
-function handleAction(language: string|undefined = "en") {
-    let targetLang = "";
-    switch(language){
-        case "es":
-            targetLang = "es";
-            break;
-        case "pt":
-            targetLang = "pt";
-            break;
-        default:
-            targetLang = "en";
+if(args.length > 0){
+    if (args[0] !== 'pt' &&  args[0] !== 'es' &&  args[0] !== 'en'){
+        input_arg = 'en';
     }
-
-     console.log(targetLang);
+    else{
+        input_arg = args[0];
+    }
+}
+else{
+    input_arg = 'en';
 }
 
-export default program;
+let result = fs.readFileSync(`${__dirname}/resources/${input_arg}`, {encoding: 'utf8'});
+
+
+const angelPercentageAmount = Math.round((Math.random()*100 + Number.EPSILON) * 100) / 100;
+const rascalPercentageAmount = (100 - angelPercentageAmount);
+
+result = result.replace("${angelPercentageAmount}", angelPercentageAmount.toLocaleString("en-US",{maximumFractionDigits:2, minimumFractionDigits:0}));
+result = result.replace("${rascalPercentageAmount}", rascalPercentageAmount.toLocaleString("en-US",{maximumFractionDigits:2, minimumFractionDigits:0}));
+
+console.log(result.toString());
