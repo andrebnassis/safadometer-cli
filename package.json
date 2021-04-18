@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "ts-node src/index.ts",
-    "build": "tsc src/index.ts"
+    "build": "tsc -p ."
   },
   "devDependencies": {
     "@types/node": "^14.14.41",

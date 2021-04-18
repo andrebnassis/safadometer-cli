@@ -4,40 +4,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.hello = void 0;
 var fs_1 = __importDefault(require("fs"));
-var commander_1 = require("commander");
-var program = new commander_1.Command();
-program.command('[language]')
-    .description("Test commander")
-    .action(handleAction);
-var result = fs_1.default.readFileSync(__dirname + "/resources/en", { encoding: 'utf8' });
-console.log(result.toString());
-var angelPercentageAmount = 45.1;
-var rascalPercentageAmount = 100 - angelPercentageAmount;
-result = result.replace("${angelPercentageAmount}", angelPercentageAmount.toString());
-result = result.replace("${rascalPercentageAmount}", rascalPercentageAmount.toString());
-console.log(result.toString());
-var world = 'world';
-function hello(word) {
-    if (word === void 0) { word = world; }
-    return "Hello " + world + "! ";
-}
-exports.hello = hello;
-console.log(hello());
-function handleAction(language) {
-    if (language === void 0) { language = "en"; }
-    var targetLang = "";
-    switch (language) {
-        case "es":
-            targetLang = "es";
-            break;
-        case "pt":
-            targetLang = "pt";
-            break;
-        default:
-            targetLang = "en";
+var _a = process.argv, args = _a.slice(2);
+var input_arg = '';
+if (args.length > 0) {
+    if (args[0] !== 'pt' && args[0] !== 'es' && args[0] !== 'en') {
+        input_arg = 'en';
     }
-    console.log(targetLang);
+    else {
+        input_arg = args[0];
+    }
 }
+else {
+    input_arg = 'en';
+}
+var result = fs_1.default.readFileSync(__dirname + "/resources/" + input_arg, { encoding: 'utf8' });
+var angelPercentageAmount = Math.round((Math.random() * 100 + Number.EPSILON) * 100) / 100;
+var rascalPercentageAmount = (100 - angelPercentageAmount);
+result = result.replace("${angelPercentageAmount}", angelPercentageAmount.toLocaleString("en-US", { maximumFractionDigits: 2, minimumFractionDigits: 0 }));
+result = result.replace("${rascalPercentageAmount}", rascalPercentageAmount.toLocaleString("en-US", { maximumFractionDigits: 2, minimumFractionDigits: 0 }));
+console.log(result.toString());
 //# sourceMappingURL=index.js.map
