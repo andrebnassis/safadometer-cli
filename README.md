@@ -1,14 +1,9 @@
 # docker-safadao-ts
 
+This project is inspired on @safadown_bot in Telegram.
 
-TODO:
 
-1. Implement algorithm (including read from file) [OK]
-2. Create dockerfile
-3. Create cli version and push as an npm cli package
-
-TEST Command
-
+# Test cli command:
 On terminal:
 1. create a symlink with npm link
 `sudo npm link`

@@ -2,7 +2,28 @@
   "name": "safadometer-cli",
   "version": "1.0.0",
   "description": "Discover how much angel and rascal you are with this Safadometer CLI",
-  "keyworkds":["safadao", "wesley safadao", "safadometro", "safadometer", "cli"],
+  "keyworkds": [
+    "safadao",
+    "wesley safadao",
+    "safadometro",
+    "safadometer",
+    "cli"
+  ],
+  "homepage":"https://github.com/andrebnassis/safadometer-ts",
+  "bugs":{
+    "url" : "https://github.com/andrebnassis/safadometer-ts/issues",
+    "email" : "andrebnassis@gmail.com"
+  },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/andrebnassis/safadometer-ts"
+    },
+  "author":{
+    "name":"André Borba Netto Assis",
+    "email":"andrebnassis@gmail.com",
+    "url":"https://github.com/andrebnassis"
+  },
+  "license": "MIT",
   "main": "dist/safadao.js",
   "types": "dist/safadao.d.ts",
   "bin": {
