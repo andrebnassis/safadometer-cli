@@ -1,7 +1,8 @@
 {
-  "name": "safadao",
+  "name": "safadometer-cli",
   "version": "1.0.0",
-  "description": "Safadao library",
+  "description": "Discover how much angel and rascal you are with this Safadometer CLI",
+  "keyworkds":["safadao", "wesley safadao", "safadometro", "safadometer", "cli"],
   "main": "dist/safadao.js",
   "types": "dist/safadao.d.ts",
   "bin": {
