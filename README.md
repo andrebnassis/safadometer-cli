@@ -3,7 +3,7 @@
 This project is inspired on @safadown_bot in Telegram.
 
 ## NPM Package:
-https://www.npmjs.com/package/safadometer-cli [https://www.npmjs.com/package/safadometer-cli]
+https://www.npmjs.com/package/safadometer-cli
 
 # Run project locally:
 
