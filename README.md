@@ -1,4 +1,4 @@
-# docker-safadao-ts
+# safadometer-ts
 
 This project is inspired on @safadown_bot in Telegram.
 
