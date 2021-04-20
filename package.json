@@ -4,8 +4,8 @@
   "description": "Safadao library",
   "main": "dist/safadao.js",
   "types": "dist/safadao.d.ts",
-  "bin":{
-    "safadometer-cli":"./dist/safadao.js"
+  "bin": {
+    "safadometer-cli": "./dist/safadao.js"
   },
   "scripts": {
     "start": "ts-node src/safadao.ts",
