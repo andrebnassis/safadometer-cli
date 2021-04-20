@@ -9,7 +9,6 @@
   },
   "scripts": {
     "start": "ts-node src/safadao.ts",
-    "start:sh": "src/safadao.sh",
     "build": "tsc && cp -rv src/resources/ dist/resources",
     "start:build": "node dist/safadao.js"
   },
