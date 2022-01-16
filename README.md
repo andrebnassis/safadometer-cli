@@ -1,6 +1,15 @@
-# safadometer-ts
+# safadometer-cli
 
 This project is inspired on @safadown_bot in Telegram.
+
+## Using on terminal
+
+```bash
+npx safadometer-cli  
+```
+
+> Supported script argument <lang_argument>: pt en es  
+> IF no argument is given, default used is 'en'.
 
 ## NPM Package:
 https://www.npmjs.com/package/safadometer-cli
